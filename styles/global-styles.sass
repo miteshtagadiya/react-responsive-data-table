@@ -1,0 +1,53 @@
+@import "helper.scss"
+@import "scss/variable.scss"
+@import "scss/responsive.scss"
+@import "scss/advance-widget.scss"
+@import "scss/badge.scss"
+@import "scss/forms.scss"
+@import "scss/form-validation.scss"
+@import "scss/notifications.scss"
+
+@import "scss/global.scss"
+@import "~bootstrap/dist/css/bootstrap.css"
+
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:300i,400,600,700,800')
+// @import url('https://fonts.googleapis.com/css?family=Poppins')
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700')
+@import url('https://fonts.googleapis.com/css?family=PT+Sans')
+@import url('https://fonts.googleapis.com/css?family=Raleway')
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif')
+#root,html
+    height: 100%
+    width: 100%
+    padding: 0
+    margin: 0
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    background: $ash
+    font-family: 'Poppins', sans-serif //'Source Sans Pro', sans-serif //Noto Serif !important
+
+body
+    padding: 0
+    margin: 0
+    -webkit-font-smoothing: antialiased
+    -moz-osx-font-smoothing: grayscale
+    background: $ash
+
+
+.pull-right
+    float: right
+
+.pull-left
+    float: left
+
+*::-webkit-scrollbar
+    height: 6px
+    width: 6px
+*::-webkit-scrollbar-thumb
+    background-color: #6e6e6e
+    outline: 1px solid #333
+*::-webkit-scrollbar-track
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3)
+@media (min-width: 1025px)
+    .hidden-1024-up
+        display: none !important

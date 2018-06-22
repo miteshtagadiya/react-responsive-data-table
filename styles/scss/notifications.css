@@ -1,0 +1,75 @@
+/*    Font Variable
+----------------------*/
+/*    Color Variable
+-----------------------*/
+/*    Solid Color
+
+------------------*/
+/*    Brand color
+----------------------*/
+.notifications-tr {
+  font-family: inherit;
+  position: fixed;
+  width: 320px;
+  color: #fff;
+  padding: 0px 10px 10px;
+  z-index: 9998;
+  box-sizing: border-box;
+  height: auto;
+  top: 0px;
+  bottom: auto;
+  left: auto;
+  right: 0px;
+  /* Animations to fade the snackbar in and out */ }
+  .notifications-tr .notification {
+    background: #fc6180;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 15px;
+    filter: drop-shadow(10px 5px 2px #e7e7e7); }
+    .notifications-tr .notification .notification-dismiss {
+      position: absolute;
+      top: 15px;
+      right: 15px; }
+    .notifications-tr .notification .notification-message {
+      margin: 5px; }
+  .notifications-tr .notification-error {
+    background: #fc6180; }
+  .notifications-tr .notification-visible {
+    display: block;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s; }
+  .notifications-tr .notification-hidden {
+    display: none; }
+
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0; }
+  to {
+    top: 30px;
+    opacity: 1; } }
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0; }
+  to {
+    top: 30px;
+    opacity: 1; } }
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1; }
+  to {
+    top: 0;
+    opacity: 0; } }
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1; }
+  to {
+    top: 0;
+    opacity: 0; } }

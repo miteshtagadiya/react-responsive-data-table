@@ -1,0 +1,182 @@
+/*    Font Variable
+----------------------*/
+/*    Color Variable
+-----------------------*/
+/*    Solid Color
+
+------------------*/
+/*    Brand color
+----------------------*/
+/*    Input Style
+------------------------*/
+.form-group {
+  margin-bottom: 20px; }
+
+.form-control {
+  height: 42px;
+  border-radius: 0;
+  box-shadow: none;
+  border-color: #e7e7e7;
+  font-family: "Poppins", sans-serif; }
+  .form-control:hover {
+    box-shadow: none;
+    border-color: #e7e7e7; }
+  .form-control.active, .form-control:focus {
+    box-shadow: none;
+    border-color: #878787; }
+
+.input-default {
+  border-radius: 4px; }
+
+.input-flat {
+  border-radius: 0; }
+
+.input-rounded {
+  border-radius: 100px; }
+
+.input-focus {
+  border-color: #471dff; }
+  .input-focus:focus {
+    border-color: #471dff; }
+
+/*    Search Box Input Button
+--------------------------------*/
+.input-group-btn .btn {
+  padding: 10px 12px; }
+
+.input-group-default .form-control {
+  border-radius: 4px; }
+
+.input-group-flat .form-control {
+  border-radius: 4px; }
+
+.input-group-flat .btn {
+  border-radius: 0;
+  border-radius: 0; }
+
+.input-group-rounded .form-control {
+  border-radius: 100px; }
+
+.input-group-rounded .btn-group-left {
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px; }
+
+.input-group-rounded .btn-group-right {
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px; }
+
+.input-group-close-icon {
+  background: none;
+  color: #252525;
+  border-color: #e7e7e7; }
+  .input-group-close-icon.active, .input-group-close-icon:focus, .input-group-close-icon:hover {
+    background: none;
+    border-color: #e7e7e7;
+    color: #252525; }
+
+/*    Input States
+-----------------------*/
+.has-default .form-control.active, .has-default .form-control:focus, .has-default .form-control:hover,
+.has-error .form-control.active,
+.has-error .form-control:focus,
+.has-error .form-control:hover,
+.has-success .form-control.active,
+.has-success .form-control:focus,
+.has-success .form-control:hover,
+.has-warning .form-control.active,
+.has-warning .form-control:focus,
+.has-warning .form-control:hover {
+  box-shadow: none; }
+
+.has-default .control-label {
+  color: #878787; }
+
+.has-default .form-control {
+  border-color: #878787; }
+  .has-default .form-control.active, .has-default .form-control:focus, .has-default .form-control:hover {
+    border-color: #878787; }
+
+.has-success .control-label {
+  color: #26dad2; }
+
+.has-success .form-control {
+  border-color: #26dad2; }
+  .has-success .form-control.active, .has-success .form-control:focus, .has-success .form-control:hover {
+    border-color: #26dad2; }
+
+.has-warning .control-label {
+  color: #ffb64d; }
+
+.has-warning .form-control {
+  border-color: #ffb64d; }
+  .has-warning .form-control.active, .has-warning .form-control:focus, .has-warning .form-control:hover {
+    border-color: #ffb64d; }
+
+.has-error .control-label {
+  color: #fc6180; }
+
+.has-error .form-control {
+  border-color: #fc6180; }
+  .has-error .form-control.active, .has-error .form-control:focus, .has-error .form-control:hover {
+    border-color: #fc6180; }
+
+.has-feedback label ~ .form-control-feedback {
+  top: 35px; }
+
+.form-horizontal .has-feedback .form-control-feedback {
+  top: 5px; }
+
+.has-success .form-control-feedback {
+  color: #26dad2; }
+
+.has-warning .form-control-feedback {
+  color: #ffb64d; }
+
+.has-error .form-control-feedback {
+  color: #fc6180; }
+
+.has-success .input-group-addon {
+  background-color: #93ede9;
+  border-color: #26dad2;
+  color: #26dad2; }
+
+.has-warning .input-group-addon {
+  background-color: #ffeacd;
+  border-color: #ffb64d;
+  color: #ffb64d; }
+
+.has-error .input-group-addon {
+  background-color: #fedee5;
+  border-color: #fc6180;
+  color: #fc6180; }
+
+/*    Input Size
+--------------------*/
+.input-sm {
+  font-size: 12px;
+  height: 30px;
+  line-height: 1.5; }
+
+.input-lg {
+  font-size: 18px;
+  height: 46px;
+  line-height: 1.33333; }
+
+/*    Basic form
+----------------------*/
+label {
+  font-weight: 400;
+  margin-bottom: 10px; }
+
+/*    Form Horizontal
+----------------------*/
+.form-horizontal .control-label {
+  padding-top: 12px; }
+
+.form-horizontal .form-group {
+  margin-left: 0;
+  margin-right: 0; }
+
+.dropdown-menu li {
+  font-size: 14px;
+  padding: 5px 15px; }

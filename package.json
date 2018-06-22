@@ -1,0 +1,44 @@
+{
+  "name": "react-responsive-data-table",
+  "version": "1.0.0",
+  "description": "Responsive Data Table with Pagination, Searching and Sorting",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --mode development",
+    "transpile": "babel src -d dist --copy-files",
+    "prepublishOnly": "npm run transpile"
+  },
+  "author": "miteshtagadiya",
+  "license": "ISC",
+  "repository": "miteshtagadiya/react-responsive-data-table",
+  "peerDependencies": {
+    "react": "^16.3.0",
+    "react-dom": "^16.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.8",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "bootstrap4": "0.0.1-security",
+    "fetch-hoc": "^0.3.0",
+    "is-number": "^6.0.0",
+    "is-valid-date": "0.0.1",
+    "lodash": "^4.17.10",
+    "react-content-loader": "^3.1.2",
+    "react-select": "^1.2.1"
+  }
+}

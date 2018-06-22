@@ -1,0 +1,20 @@
+/*    Font Variable
+----------------------*/
+/*    Color Variable
+-----------------------*/
+/*    Solid Color
+
+------------------*/
+/*    Brand color
+----------------------*/
+.is-invalid .form-control {
+  border-color: #fc6180; }
+
+.invalid-feedback {
+  color: #ef5350;
+  display: none;
+  margin-top: 0.25rem; }
+
+.is-invalid .invalid-feedback,
+.is-invalid .invalid-tooltip {
+  display: block; }

@@ -1,0 +1,92 @@
+@import "styles/scss/variable.scss";
+
+.notifications-tr {
+  font-family: inherit;
+  position: fixed;
+  width: 320px;
+  color: $white;
+  padding: 0px 10px 10px;
+  z-index: 9998;
+  box-sizing: border-box;
+  height: auto;
+  top: 0px;
+  bottom: auto;
+  left: auto;
+  right: 0px;
+  .notification {
+    background: $danger;
+    padding: 15px;
+    position: relative;
+    margin-bottom: 15px;
+    filter: drop-shadow(10px 5px 2px $border);
+    .notification-dismiss {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+    .notification-message {
+      margin: 5px;
+    }
+  }
+
+  .notification-error {
+    background: $danger;
+  }
+  .notification-success {
+  }
+  .notification-visible {
+    display: block;
+    // visibility: visible;
+    -webkit-animation: fadein 0.5s;
+    animation: fadein 0.5s;
+  }
+  .notification-hidden {
+    display: none;
+    // visibility: hidden;
+  }
+  /* Animations to fade the snackbar in and out */
+
+  @-webkit-keyframes fadein {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+    to {
+      top: 30px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadein {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+    to {
+      top: 30px;
+      opacity: 1;
+    }
+  }
+
+  @-webkit-keyframes fadeout {
+    from {
+      top: 30px;
+      opacity: 1;
+    }
+    to {
+      top: 0;
+      opacity: 0;
+    }
+  }
+
+  @keyframes fadeout {
+    from {
+      top: 30px;
+      opacity: 1;
+    }
+    to {
+      top: 0;
+      opacity: 0;
+    }
+  }
+}
