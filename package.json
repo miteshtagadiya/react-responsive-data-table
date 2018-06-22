@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-data-table",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Responsive Data Table with Pagination, Searching and Sorting",
   "main": "dist/index.js",
   "scripts": {
