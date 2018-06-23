@@ -2,12 +2,27 @@
 Responsive Data Table with Searching, Sorting, Pagination
 
 ## Installation
-```sh
-npm install react-responsive-data-table
+
+1.  Install React Table as a dependency
+
+```bash
+# NPM
+$ npm install react-responsive-data-table
 ```
 
-## Usage
+2.  Import the `react-responsive-data-table` module
+
+```javascript
+// ES6
+import Table from "react-responsive-data-table";
+```
+
+
+## Example
 ```jsx
+import Table from 'react-responsive-data-table';
+
+render() {
 <Table style={{
     opacity: 0.8,
     backgroundColor: "blue",
@@ -19,7 +34,6 @@ npm install react-responsive-data-table
   page={true}
   title="Customers"
   search={true}
-  //page={1}
   totalPages={27}
   size={10}
   data={{
@@ -62,4 +76,47 @@ npm install react-responsive-data-table
       }
     ]
   }} />
+  }
+
 ```
+
+## Data
+You have to pass data and head objects in data prop. head is for Header.
+```javascript
+<Table
+  data={{head:{},data:[]}}
+/>
+```
+
+## Props
+
+These are all of the available props (and their default values) for the main `<Table />` component.
+```javascript
+{
+    data={{
+        head:{},
+        data:[]
+        }},
+    style,
+    pages: true,
+    pagination= true,
+    page= true,
+    title= "title",
+    search= true,
+    totalPages= 27,
+    size= 10,
+    
+}
+```
+
+## Props Details
+
+* `data` - You have to pass data and head objects in data prop. head is for Header.
+* `style` - Style for Table Header
+* `pages` - Boolean. Shows Pages Option to display number of records per page.[5,10,20,25,50]
+* `pagination` - Boolean. Shows Pagination if true.
+* `page` - Boolean. Shows Current page out of total pages if true.
+* `title` - String. Title for Table.
+* `search` - Boolean. Shows Searchbar if true.
+* `totalPages` - Total Number Of Pages(Optional).
+* `size` - Number Of Records that Shows in single page. You can Onle use 5,10,20,25,50.
