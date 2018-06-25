@@ -42,6 +42,10 @@ render() {
   pages={true}
   pagination={true}
   page={true}
+  errormsg="Error. . ."
+  loadingmsg="Loading. . ."
+  isLoading={false} 
+  sort={true} 
   title="Customers"
   search={true}
   totalPages={27}
@@ -115,7 +119,10 @@ These are all of the available props (and their default values) for the main `<T
     search= true,
     totalPages= 27,
     size= 10,
-    
+    errormsg= "Error message",
+    loadingmsg= "Loading message",
+    isLoading= false,
+    sort= true 
 }
 ```
 
@@ -129,4 +136,9 @@ These are all of the available props (and their default values) for the main `<T
 * `title` - String. Title for Table.
 * `search` - Boolean. Shows Searchbar if true.
 * `totalPages` - Total Number Of Pages(Optional).
-* `size` - Number Of Records that Shows in single page. You can Onle use 5,10,20,25,50.
+* `size` - Number Of Records that Shows in single page. You can 
+Onle use 5,10,20,25,50.
+* `errormsg` - Error message.(Default is Error. . .)
+* `loadingmsg` - Loading message. (Default is Loading. . .)
+* `isLoading` - Boolean. Default is false
+* `sort` - Boolean. Default is false
