@@ -129,11 +129,7 @@ class Pagination extends React.Component {
     let endLinks =
       (currentPage === totalPages && totalPages !== 1) || totalPages === 1;
     if (totalPages === 0) {
-      return (
-        <div style={{ border: 1, marginBottom: 30 }}>
-          <center>Loading...</center>
-        </div>
-      );
+      return "";
     } else {
       return (
         <div className="react-bs-table-pagination" style={{ marginTop: 10 }}>
