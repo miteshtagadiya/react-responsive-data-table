@@ -1,8 +1,10 @@
 # react-responsive-data-table
 Responsive Data Table with Searching, Sorting, Pagination
 
+[![npm](https://img.shields.io/npm/v/react-responsive-data-table.svg)](https://www.npmjs.com/package/react-responsive-data-table)
+
 ## Demo
-<a href="https://miteshtagadiya.github.io/react-responsive-data-table/" target="_blank">Click Here</a>
+[Click Here](https://miteshtagadiya.github.io/react-responsive-data-table/)
 
 ## Installation
 
