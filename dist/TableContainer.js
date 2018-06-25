@@ -82,20 +82,18 @@ var TableContainer = function (_Component) {
   }, {
     key: "handlePage",
     value: function handlePage(e) {
-      console.log(e);
-      this.state.totalPages < e.value ? this.setState({
+      this.state.totalPages <= Math.ceil(this.state.data1.length / e.value) ? this.setState({
         itemsPerPage: e.value,
         totalPages: Math.ceil(this.state.data1.length / e.value)
       }) : this.setState({
+        currentPage: 1,
         itemsPerPage: e.value,
-        totalPages: Math.ceil(this.state.data1.length / e.value),
-        currentPage: 1
+        totalPages: Math.ceil(this.state.data1.length / e.value)
       });
     }
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(nextProps, nextState) {
-      console.log();
       if (this.state.data !== nextState.data) {
         this.setState({
           data: nextState.pagedata[nextState.currentPage - 1]
@@ -114,8 +112,6 @@ var TableContainer = function (_Component) {
     value: function render() {
       var _this2 = this;
 
-      // console.log("render", this.state.itemsPerPage);
-      // console.log("data", this.state.data);
       var tbData = this.state.data1;
       tbData = tbData.map(function (data) {
         var date = new Date(data.created_at);
@@ -128,13 +124,11 @@ var TableContainer = function (_Component) {
           month = "0" + month;
         }
         var date_Data = date.getFullYear() + "-" + month + "-" + dt;
-        // console.log(date_Data);
         data.created_at = date_Data;
         return Object.values(data);
       });
       var tbdata2 = _lodash2.default.chunk(tbData, this.state.itemsPerPage);
       var items = tbdata2[this.state.currentPage - 1];
-      console.log(items);
 
       var keys = this.state.value;
       //filter items
@@ -232,9 +226,12 @@ var TableContainer = function (_Component) {
                   data: items,
                   head: this.state.head,
                   onRowClick: this.props.onRowClick,
-                  loading: "false"
+                  isLoading: this.props.isLoading,
+                  loadingmsg: this.props.loadingmsg ? this.props.loadingmsg : "Loading. . .",
+                  errormsg: this.props.errormsg ? this.props.errormsg : "Error. . .",
+                  sort: this.props.sort
                 }),
-                _react2.default.createElement(
+                !this.props.isLoading ? _react2.default.createElement(
                   "div",
                   { className: "row" },
                   _react2.default.createElement(
@@ -289,13 +286,12 @@ var TableContainer = function (_Component) {
                       this.state.totalPages ? this.state.totalPages : 0
                     ) : null
                   )
-                )
+                ) : null
               )
             )
           )
         )
       );
-      // console.log(this.state.value);
     }
   }]);
 

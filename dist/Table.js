@@ -127,17 +127,17 @@ var Table = exports.Table = function (_Component) {
       var _this4 = this;
 
       var _props = this.props,
-          loading = _props.loading,
+          isLoading = _props.isLoading,
           success = _props.success;
 
 
-      if (!loading && success) {
+      if (!isLoading && success) {
         var data = this.props.data;
 
         return _react2.default.createElement(
           "div",
           { className: "table-responsive bg-white", style: { marginTop: 5 } },
-          _react2.default.createElement(
+          this.props.data === undefined ? this.props.errormsg : _react2.default.createElement(
             "table",
             {
               "data-resizable": "true",
@@ -157,7 +157,7 @@ var Table = exports.Table = function (_Component) {
                     "th",
                     { key: h },
                     h,
-                    _react2.default.createElement("img", {
+                    _this4.props.sort ? _react2.default.createElement("img", {
                       alt: "",
                       src: _sort2.default,
                       height: 20,
@@ -165,7 +165,7 @@ var Table = exports.Table = function (_Component) {
                         return _this4.sortData(h, index);
                       },
                       style: { float: "right", marginTop: "7px" }
-                    })
+                    }) : ""
                   );
                 })
               )
@@ -177,13 +177,14 @@ var Table = exports.Table = function (_Component) {
             )
           )
         );
-      } else if (loading) {
-        return MyLoader();
       } else {
         return _react2.default.createElement(
           "div",
-          { className: "table-responsive m-t-40 bg-white" },
-          "Error"
+          {
+            className: "table-responsive m-t-40 bg-white",
+            style: { justifyContent: "center", display: "flex", minHeight: 100 }
+          },
+          this.props.loadingmsg
         );
       }
     }

@@ -169,15 +169,7 @@ var Pagination = function (_React$Component) {
       var prevLinks = currentPage === 1 && totalPages !== 1 || totalPages === 1;
       var endLinks = currentPage === totalPages && totalPages !== 1 || totalPages === 1;
       if (totalPages === 0) {
-        return _react2.default.createElement(
-          "div",
-          { style: { border: 1, marginBottom: 30 } },
-          _react2.default.createElement(
-            "center",
-            null,
-            "Loading..."
-          )
-        );
+        return "";
       } else {
         return _react2.default.createElement(
           "div",
