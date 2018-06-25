@@ -66,45 +66,59 @@ export class Table extends Component {
   }
 
   render() {
-    const { loading, success } = this.props;
+    const { isLoading, success } = this.props;
 
-    if (!loading && success) {
+    if (!isLoading && success) {
       const { data } = this.props;
       return (
         <div className="table-responsive bg-white" style={{ marginTop: 5 }}>
           {/* <Link to="customers/1"> */}
-          <table
-            data-resizable="true"
-            className="display nowrap table table-hover table-striped table-bordered"
-            cellSpacing="0"
-            width="100%"
-            style={{ tableLayout: "fixed", zIndex: 0 }}
-          >
-            <thead>
-              <tr>
-                {Object.values(this.props.head).map((h, index) => (
-                  <th key={h}>
-                    {h}
-                    <img
-                      alt=""
-                      src={sort}
-                      height={20}
-                      onClick={() => this.sortData(h, index)}
-                      style={{ float: "right", marginTop: "7px" }}
-                    />
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="sort">{this.renderData(data)}</tbody>
-          </table>
+          {this.props.data === undefined ? (
+            this.props.errormsg
+          ) : (
+            <table
+              data-resizable="true"
+              className="display nowrap table table-hover table-striped table-bordered"
+              cellSpacing="0"
+              width="100%"
+              style={{ tableLayout: "fixed", zIndex: 0 }}
+            >
+              <thead>
+                <tr>
+                  {Object.values(this.props.head).map((h, index) => (
+                    <th key={h}>
+                      {h}
+                      {this.props.sort ? (
+                        <img
+                          alt=""
+                          src={sort}
+                          height={20}
+                          onClick={() => this.sortData(h, index)}
+                          style={{ float: "right", marginTop: "7px" }}
+                        />
+                      ) : (
+                        ""
+                      )}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="sort">{this.renderData(data)}</tbody>
+            </table>
+          )}
+
           {/* </Link> */}
         </div>
       );
-    } else if (loading) {
-      return MyLoader();
     } else {
-      return <div className="table-responsive m-t-40 bg-white">Error</div>;
+      return (
+        <div
+          className="table-responsive m-t-40 bg-white"
+          style={{ justifyContent: "center", display: "flex", minHeight: 100 }}
+        >
+          {this.props.loadingmsg}
+        </div>
+      );
     }
   }
 }
