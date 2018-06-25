@@ -3,6 +3,15 @@
   "version": "1.0.1",
   "description": "Responsive Data Table with Pagination, Searching and Sorting",
   "main": "dist/index.js",
+  "keywords": [
+    "react table",
+    "table",
+    "responsive-data-table",
+    "react-responsive-data-table",
+    "react",
+    "react-data-table",
+    "table"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development",
