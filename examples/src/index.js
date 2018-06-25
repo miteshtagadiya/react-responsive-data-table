@@ -15,11 +15,10 @@ render(
     page={true}
     title="Customers"
     search={true}
-    errormsg="Error. . ." // new
-    loadingmsg="Loading. . ."//new
-    isLoading={false} //new
-    sort={true} // new
-    //page={1}
+    errormsg="Error. . ."
+    loadingmsg="Loading. . ."
+    isLoading={false} 
+    sort={true} 
     totalPages={27}
     size={10}
     data={{
