@@ -132,9 +132,7 @@ class Pagination extends React.Component {
       (currentPage === totalPages && totalPages !== 1) || totalPages === 1;
     if (totalPages === 0) {
       return (
-        <div style={{ border: 1, marginBottom: 30 }}>
-          <center>Loading...</center>
-        </div>
+       ""
       );
     } else {
       return (
