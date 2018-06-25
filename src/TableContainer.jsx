@@ -35,20 +35,18 @@ class TableContainer extends Component {
     this.setState({ value: event.value });
   }
   handlePage(e) {
-    console.log(e);
-    this.state.totalPages < e.value
+    this.state.totalPages <= Math.ceil(this.state.data1.length / e.value)
       ? this.setState({
           itemsPerPage: e.value,
           totalPages: Math.ceil(this.state.data1.length / e.value)
         })
       : this.setState({
+          currentPage: 1,
           itemsPerPage: e.value,
-          totalPages: Math.ceil(this.state.data1.length / e.value),
-          currentPage: 1
+          totalPages: Math.ceil(this.state.data1.length / e.value)
         });
   }
   componentDidUpdate(nextProps, nextState) {
-    console.log();
     if (this.state.data !== nextState.data) {
       this.setState({
         data: nextState.pagedata[nextState.currentPage - 1]
@@ -60,8 +58,6 @@ class TableContainer extends Component {
     this.setState({ filter: e.target.value });
   }
   render() {
-    // console.log("render", this.state.itemsPerPage);
-    // console.log("data", this.state.data);
     let tbData = this.state.data1;
     tbData = tbData.map(data => {
       let date = new Date(data.created_at);
@@ -74,13 +70,11 @@ class TableContainer extends Component {
         month = "0" + month;
       }
       let date_Data = date.getFullYear() + "-" + month + "-" + dt;
-      // console.log(date_Data);
       data.created_at = date_Data;
       return Object.values(data);
     });
     let tbdata2 = _.chunk(tbData, this.state.itemsPerPage);
     let items = tbdata2[this.state.currentPage - 1];
-    console.log(items);
 
     let keys = this.state.value;
     //filter items
@@ -172,8 +166,13 @@ class TableContainer extends Component {
                   data={items}
                   head={this.state.head}
                   onRowClick={this.props.onRowClick}
-                  loading="false"
+                  isLoading={this.props.isLoading}
+                  loadingmsg={this.props.loadingmsg}
+                  errormsg={this.props.errormsg}
+                  sort={this.props.sort}
                 />
+
+                  {!this.props.isLoading ? 
 
                 <div className="row">
                   <div className="col-sm-4">
@@ -233,13 +232,14 @@ class TableContainer extends Component {
                     ) : null}
                   </div>
                 </div>
+              : null }
+
               </React.Fragment>
             </div>
           </div>
         </div>
       </div>
     );
-    // console.log(this.state.value);
   }
 }
 
