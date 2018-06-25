@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import Table from "../../src/TableContainer.jsx";
 const App = () => console.log("ok");
 render(
-    <Table
+  <Table
     style={{
       opacity: 0.8,
       backgroundColor: "blue",
@@ -15,6 +15,10 @@ render(
     page={true}
     title="Customers"
     search={true}
+    errormsg="Error. . ." // new
+    loadingmsg="Loading. . ."//new
+    isLoading={false} //new
+    sort={true} // new
     //page={1}
     totalPages={27}
     size={10}
