@@ -1,6 +1,9 @@
 # react-responsive-data-table
 Responsive Data Table with Searching, Sorting, Pagination
 
+## Demo
+[Click Here](https://miteshtagadiya.github.io/react-responsive-data-table/)
+
 ## Installation
 
 1.  Install React Table as a dependency
