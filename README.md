@@ -2,7 +2,7 @@
 Responsive Data Table with Searching, Sorting, Pagination
 
 ## Demo
-[Click Here](https://miteshtagadiya.github.io/react-responsive-data-table/)
+<a href="https://miteshtagadiya.github.io/react-responsive-data-table/" target="_blank">Click Here</a>
 
 ## Installation
 
