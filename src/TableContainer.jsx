@@ -167,8 +167,8 @@ class TableContainer extends Component {
                   head={this.state.head}
                   onRowClick={this.props.onRowClick}
                   isLoading={this.props.isLoading}
-                  loadingmsg={this.props.loadingmsg}
-                  errormsg={this.props.errormsg}
+                  loadingmsg={this.props.loadingmsg ? this.props.loadingmsg : "Loading. . ."}
+                  errormsg={this.props.errormsg ? this.props.errormsg : "Error. . ."}
                   sort={this.props.sort}
                 />
 
