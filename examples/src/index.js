@@ -2,6 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 import Table from "../../src/TableContainer.jsx";
 const App = () => console.log("ok");
+
 render(
   <Table
     style={{
@@ -11,14 +12,15 @@ render(
       textAlign: "center"
     }}
     pages={true}
+    onRowClick={row => console.log(row)}
     pagination={true}
     page={true}
     title="Customers"
     search={true}
     errormsg="Error. . ."
     loadingmsg="Loading. . ."
-    isLoading={false} 
-    sort={true} 
+    isLoading={false}
+    sort={true}
     totalPages={27}
     size={10}
     data={{
