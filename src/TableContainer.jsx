@@ -53,6 +53,7 @@ class TableContainer extends Component {
       });
     }
   }
+
   //for filter data
   filter(e) {
     this.setState({ filter: e.target.value });
@@ -91,7 +92,12 @@ class TableContainer extends Component {
       <div className="container">
         <div
           className="card"
-          style={{ marginBottom: 15, marginTop: 20, padding: 10 }}
+          style={{
+            marginBottom: 15,
+            marginTop: 20,
+            padding: 10,
+            minWidth: 600
+          }}
         >
           <div
             className="card-header"
@@ -165,75 +171,79 @@ class TableContainer extends Component {
                 <Table
                   data={items}
                   head={this.state.head}
-                  onRowClick={this.props.onRowClick}
+                  onRowClick={(this.props.onRowClick)}
                   isLoading={this.props.isLoading}
-                  loadingmsg={this.props.loadingmsg ? this.props.loadingmsg : "Loading. . ."}
-                  errormsg={this.props.errormsg ? this.props.errormsg : "Error. . ."}
+                  loadingmsg={
+                    this.props.loadingmsg
+                      ? this.props.loadingmsg
+                      : "Loading. . ."
+                  }
+                  errormsg={
+                    this.props.errormsg ? this.props.errormsg : "Error. . ."
+                  }
                   sort={this.props.sort}
                 />
 
-                  {!this.props.isLoading ? 
-
-                <div className="row">
-                  <div className="col-sm-4">
-                    {this.props.pagination === true ? (
-                      <Pagination
-                        totalPages={
-                          //this.state.filter ? searchpage : this.state.totalPages
-                          this.state.totalPages
-                        }
-                        currentPage={
-                          //this.state.filter ? "1" : this.state.currentPage
-                          this.state.currentPage
-                        }
-                        onPageLinkClick={page =>
-                          this.setState({ currentPage: page })
-                        }
-                      />
-                    ) : null}
+                {!this.props.isLoading ? (
+                  <div className="row">
+                    <div className="col-sm-4">
+                      {this.props.pagination === true ? (
+                        <Pagination
+                          totalPages={
+                            //this.state.filter ? searchpage : this.state.totalPages
+                            this.state.totalPages
+                          }
+                          currentPage={
+                            //this.state.filter ? "1" : this.state.currentPage
+                            this.state.currentPage
+                          }
+                          onPageLinkClick={page =>
+                            this.setState({ currentPage: page })
+                          }
+                        />
+                      ) : null}
+                    </div>
+                    <div className="col-sm-4">
+                      {this.props.pages === true ? (
+                        <Select
+                          className="selectouter"
+                          style={{
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                            paddingBottom: 6,
+                            borderBottomLeftRadius: 4,
+                            borderBottomRightRadius: 0,
+                            borderTopLeftRadius: 4,
+                            borderTopRightRadius: 0,
+                            marginTop: 10
+                          }}
+                          name="Filter By"
+                          placeholder="Filter By"
+                          value={this.state.itemsPerPage}
+                          onChange={this.handlePage.bind(this)}
+                          clearable={false}
+                          options={[
+                            { value: 5, label: "5 rows" },
+                            { value: 10, label: "10 rows" },
+                            { value: 20, label: "20 rows" },
+                            { value: 25, label: "25 rows" },
+                            { value: 50, label: "50 rows" },
+                            { value: 100, label: "100 rows" }
+                          ]}
+                        />
+                      ) : null}
+                    </div>
+                    <div className="col-sm-4">
+                      {this.props.page === true ? (
+                        <div style={{ float: "right", marginTop: 15 }}>
+                          Page{" "}
+                          {this.state.totalPages ? this.state.currentPage : 0}{" "}
+                          of {this.state.totalPages ? this.state.totalPages : 0}
+                        </div>
+                      ) : null}
+                    </div>
                   </div>
-                  <div className="col-sm-4">
-                    {this.props.pages === true ? (
-                      <Select
-                        className="selectouter"
-                        style={{
-                          marginLeft: "auto",
-                          marginRight: "auto",
-                          paddingBottom: 6,
-                          borderBottomLeftRadius: 4,
-                          borderBottomRightRadius: 0,
-                          borderTopLeftRadius: 4,
-                          borderTopRightRadius: 0,
-                          marginTop: 10
-                        }}
-                        name="Filter By"
-                        placeholder="Filter By"
-                        value={this.state.itemsPerPage}
-                        onChange={this.handlePage.bind(this)}
-                        clearable={false}
-                        options={[
-                          { value: 5, label: "5 rows" },
-                          { value: 10, label: "10 rows" },
-                          { value: 20, label: "20 rows" },
-                          { value: 25, label: "25 rows" },
-                          { value: 50, label: "50 rows" },
-                          { value: 100, label: "100 rows" }
-                        ]}
-                      />
-                    ) : null}
-                  </div>
-                  <div className="col-sm-4">
-                    {this.props.page === true ? (
-                      <div style={{ float: "right", marginTop: 15 }}>
-                        Page{" "}
-                        {this.state.totalPages ? this.state.currentPage : 0} of{" "}
-                        {this.state.totalPages ? this.state.totalPages : 0}
-                      </div>
-                    ) : null}
-                  </div>
-                </div>
-              : null }
-
+                ) : null}
               </React.Fragment>
             </div>
           </div>
