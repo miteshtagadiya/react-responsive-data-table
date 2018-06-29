@@ -41,6 +41,7 @@ render() {
   }}
   pages={true}
   pagination={true}
+  onRowClick={() => {}} // if You Want Table Row Data OnClick then assign this {row => console.log(row)}
   page={true}
   errormsg="Error. . ."
   loadingmsg="Loading. . ."
@@ -122,7 +123,8 @@ These are all of the available props (and their default values) for the main `<T
     errormsg= "Error message",
     loadingmsg= "Loading message",
     isLoading= false,
-    sort= true 
+    sort= true,
+    onRowClick= {() => {}} //function
 }
 ```
 
@@ -141,4 +143,5 @@ Onle use 5,10,20,25,50.
 * `errormsg` - Error message.(Default is Error. . .)
 * `loadingmsg` - Loading message. (Default is Loading. . .)
 * `isLoading` - Boolean. Default is false
-* `sort` - Boolean. Default is false
+* `sort` - Boolean. Default is  
+* `onRowClick` - Function. You can redirect to another page by onRowClick, you can call any function by onRowClick, You can also get Row Data by onRowClick using ({row => console.log(row)}).
