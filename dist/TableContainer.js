@@ -100,6 +100,7 @@ var TableContainer = function (_Component) {
         });
       }
     }
+
     //for filter data
 
   }, {
@@ -145,7 +146,12 @@ var TableContainer = function (_Component) {
           "div",
           {
             className: "card",
-            style: { marginBottom: 15, marginTop: 20, padding: 10 }
+            style: {
+              marginBottom: 15,
+              marginTop: 20,
+              padding: 10,
+              minWidth: 600
+            }
           },
           _react2.default.createElement(
             "div",
@@ -281,8 +287,8 @@ var TableContainer = function (_Component) {
                       "Page",
                       " ",
                       this.state.totalPages ? this.state.currentPage : 0,
-                      " of",
                       " ",
+                      "of ",
                       this.state.totalPages ? this.state.totalPages : 0
                     ) : null
                   )
