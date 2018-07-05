@@ -58,10 +58,14 @@ class TableContainer extends Component {
   filter(e) {
     this.setState({ filter: e.target.value });
   }
+
+  //iso 8601 to date object
   render() {
     let tbData = this.state.data1;
     tbData = tbData.map(data => {
-      let date = new Date(data.created_at);
+      let time;
+      data.created_at ? (time = data.created_at) : (time = "");
+      let date = new Date(time);
       let dt = date.getDate();
       let month = date.getMonth() + 1;
       if (dt < 10) {
@@ -71,7 +75,7 @@ class TableContainer extends Component {
         month = "0" + month;
       }
       let date_Data = date.getFullYear() + "-" + month + "-" + dt;
-      data.created_at = date_Data;
+      data.created_at ? (data.created_at = date_Data) : null;
       return Object.values(data);
     });
     let tbdata2 = _.chunk(tbData, this.state.itemsPerPage);
@@ -171,7 +175,7 @@ class TableContainer extends Component {
                 <Table
                   data={items}
                   head={this.state.head}
-                  onRowClick={(this.props.onRowClick)}
+                  onRowClick={this.props.onRowClick}
                   isLoading={this.props.isLoading}
                   loadingmsg={
                     this.props.loadingmsg
