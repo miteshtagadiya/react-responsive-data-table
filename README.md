@@ -49,7 +49,6 @@ render() {
   sort={true} 
   title="Customers"
   search={true}
-  totalPages={27}
   size={10}
   data={{
     head: {
@@ -118,7 +117,6 @@ These are all of the available props (and their default values) for the main `<T
     page= true,
     title= "title",
     search= true,
-    totalPages= 27,
     size= 10,
     errormsg= "Error message",
     loadingmsg= "Loading message",
@@ -137,7 +135,6 @@ These are all of the available props (and their default values) for the main `<T
 * `page` - Boolean. Shows Current page out of total pages if true.
 * `title` - String. Title for Table.
 * `search` - Boolean. Shows Searchbar if true.
-* `totalPages` - Total Number Of Pages(Optional).
 * `size` - Number Of Records that Shows in single page. You can 
 Onle use 5,10,20,25,50.
 * `errormsg` - Error message.(Default is Error. . .)
