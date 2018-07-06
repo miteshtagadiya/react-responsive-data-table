@@ -21,7 +21,7 @@ render(
     loadingmsg="Loading. . ."
     isLoading={false}
     sort={true}
-    totalPages={27}
+    //totalPages={27}  removed
     size={10}
     data={{
       head: {
