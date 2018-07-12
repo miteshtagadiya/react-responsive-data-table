@@ -39,6 +39,7 @@ render() {
     color: "#ffffff",
     textAlign: "center"
   }}
+  tableStyle="table table-hover table-striped table-bordered table-borderless table-responsive"
   pages={true}
   pagination={true}
   onRowClick={() => {}} // if You Want Table Row Data OnClick then assign this {row => console.log(row)}
@@ -113,6 +114,7 @@ These are all of the available props (and their default values) for the main `<T
         }},
     style,
     pages: true,
+    tableStyle: "table class name",
     pagination= true,
     page= true,
     title= "title",
@@ -129,6 +131,7 @@ These are all of the available props (and their default values) for the main `<T
 ## Props Details
 
 * `data` - You have to pass data and head objects in data prop. head is for Header.
+* `tableStyle` - Bootstrap Table class name
 * `style` - Style for Table Header
 * `pages` - Boolean. Shows Pages Option to display number of records per page.[5,10,20,25,50]
 * `pagination` - Boolean. Shows Pagination if true.
