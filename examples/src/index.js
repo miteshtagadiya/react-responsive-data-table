@@ -1,7 +1,6 @@
 import React from "react";
 import { render } from "react-dom";
 import Table from "../../src/TableContainer.jsx";
-const App = () => console.log("ok");
 
 render(
   <Table
@@ -11,6 +10,7 @@ render(
       color: "#ffffff",
       textAlign: "center"
     }}
+    tableStyle="table table-hover table-striped table-bordered table-borderless table-responsive"
     pages={true}
     onRowClick={row => console.log(row)}
     pagination={true}
