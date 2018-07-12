@@ -173,6 +173,7 @@ class TableContainer extends Component {
                   ) : null}
                 </div>
                 <Table
+                  tableStyle={this.props.tableStyle}
                   data={items}
                   head={this.state.head}
                   onRowClick={this.props.onRowClick}
