@@ -141,7 +141,7 @@ var Table = exports.Table = function (_Component) {
             "table",
             {
               "data-resizable": "true",
-              className: "display nowrap table table-hover table-striped table-bordered",
+              className: this.props.tableStyle ? this.props.tableStyle : "display nowrap table table-hover table-striped table-bordered",
               cellSpacing: "0",
               width: "100%",
               style: { tableLayout: "fixed", zIndex: 0 }

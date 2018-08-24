@@ -108,6 +108,9 @@ var TableContainer = function (_Component) {
     value: function filter(e) {
       this.setState({ filter: e.target.value });
     }
+
+    //iso 8601 to date object
+
   }, {
     key: "render",
     value: function render() {
@@ -115,7 +118,9 @@ var TableContainer = function (_Component) {
 
       var tbData = this.state.data1;
       tbData = tbData.map(function (data) {
-        var date = new Date(data.created_at);
+        var time = void 0;
+        data.created_at ? time = data.created_at : time = "";
+        var date = new Date(time);
         var dt = date.getDate();
         var month = date.getMonth() + 1;
         if (dt < 10) {
@@ -125,7 +130,7 @@ var TableContainer = function (_Component) {
           month = "0" + month;
         }
         var date_Data = date.getFullYear() + "-" + month + "-" + dt;
-        data.created_at = date_Data;
+        data.created_at ? data.created_at = date_Data : null;
         return Object.values(data);
       });
       var tbdata2 = _lodash2.default.chunk(tbData, this.state.itemsPerPage);
@@ -229,6 +234,7 @@ var TableContainer = function (_Component) {
                   ) : null
                 ),
                 _react2.default.createElement(_Table2.default, {
+                  tableStyle: this.props.tableStyle,
                   data: items,
                   head: this.state.head,
                   onRowClick: this.props.onRowClick,
