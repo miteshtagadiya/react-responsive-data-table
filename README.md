@@ -1,6 +1,7 @@
 # react-responsive-data-table
 
-[![npm](https://img.shields.io/npm/v/react-responsive-data-table.svg)](https://www.npmjs.com/package/react-responsive-data-table) 
+[![npm](https://img.shields.io/npm/v/react-responsive-data-table.svg)](https://www.npmjs.com/package/react-responsive-data-table)
+[![npm](https://img.shields.io/npm/dm/react-responsive-data-table.svg)](https://www.npmjs.com/package/react-responsive-data-table)
 [![npm](https://img.shields.io/npm/dw/react-responsive-data-table.svg)](https://www.npmjs.com/package/react-responsive-data-table)
 ![npm](https://img.shields.io/npm/l/react-responsive-data-table.svg)
 
