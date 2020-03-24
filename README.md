@@ -36,7 +36,7 @@ import Table from 'react-responsive-data-table';
 render() {
 <Table style={{
     opacity: 0.8,
-    backgroundColor: "blue",
+    backgroundColor: "#00113a",
     color: "#ffffff",
     textAlign: "center"
   }}
