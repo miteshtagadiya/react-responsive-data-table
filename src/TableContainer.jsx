@@ -84,14 +84,17 @@ class TableContainer extends Component {
     let keys = this.state.value;
     //filter items
     if (this.state.filter) {
-      items = items.filter(item => {
+      let data = tbData.filter(item => {
         let searchTerms = keys === "" ? item : item[keys];
         return searchTerms
           .toString()
           .toLowerCase()
           .includes(this.state.filter.toLowerCase());
       });
+      tbdata2 = _.chunk(data, this.state.itemsPerPage);
+      items = tbdata2[this.state.currentPage - 1];
     }
+
     return (
       <div className="container">
         <div
@@ -174,10 +177,12 @@ class TableContainer extends Component {
                 </div>
                 <Table
                   tableStyle={this.props.tableStyle}
+                  allData={this.state.data1}
                   data={items}
                   head={this.state.head}
                   onRowClick={this.props.onRowClick}
                   isLoading={this.props.isLoading}
+                  sortedData={data => this.setState({ data1: data })}
                   loadingmsg={
                     this.props.loadingmsg
                       ? this.props.loadingmsg
@@ -195,8 +200,10 @@ class TableContainer extends Component {
                       {this.props.pagination === true ? (
                         <Pagination
                           totalPages={
-                            //this.state.filter ? searchpage : this.state.totalPages
-                            this.state.totalPages
+                            this.state.filter
+                              ? tbdata2.length
+                              : this.state.totalPages
+                            //this.state.totalPages
                           }
                           currentPage={
                             //this.state.filter ? "1" : this.state.currentPage
@@ -241,9 +248,7 @@ class TableContainer extends Component {
                     <div className="col-sm-4">
                       {this.props.page === true ? (
                         <div style={{ float: "right", marginTop: 15 }}>
-                          Page{" "}
-                          {this.state.totalPages ? this.state.currentPage : 0}{" "}
-                          of {this.state.totalPages ? this.state.totalPages : 0}
+                          Page {this.state.currentPage} of {tbdata2.length}
                         </div>
                       ) : null}
                     </div>
