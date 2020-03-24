@@ -39,17 +39,24 @@ export class Table extends Component {
           className={this.props.trClassName}
           key={index}
         >
-          {row.map((data, index) => <td key={index}>{data}</td>)}
+          {row.map((data, index) => (
+            <td key={index}>{data}</td>
+          ))}
         </tr>
       );
     });
   }
 
   sortData(head, index) {
-    let sortedData = this.props.data.sort((a, b) => {
+    let array = [];
+    this.props.allData.map(d => {
+      array.push(Object.values(d));
+    });
+
+    let sortedData = array.sort((a, b) => {
       // If number
-      let c = isNumber(a[index]) ? parseInt(a[index], 10) : a[index];
-      let d = isNumber(b[index]) ? parseInt(b[index], 10) : b[index];
+      let c = isNumber(a[index]) ? parseInt(a[index], array.length) : a[index];
+      let d = isNumber(b[index]) ? parseInt(b[index], array.length) : b[index];
       // If date
       c = isValidDate(a[index]) ? new Date(a[index]) : c;
       d = isValidDate(b[index]) ? new Date(b[index]) : d;
@@ -58,11 +65,12 @@ export class Table extends Component {
         return c > d ? -1 : 1;
       }
     });
-
+    
     this.setState({
       data: sortedData,
       i: this.state.i === 0 ? 1 : 0
     });
+    return this.props.sortedData(sortedData)
   }
 
   render() {
@@ -97,7 +105,9 @@ export class Table extends Component {
                           alt=""
                           src={sort}
                           height={20}
-                          onClick={() => this.sortData(h, index)}
+                          onClick={() => {
+                            this.sortData(h, index);
+                          }}
                           style={{ float: "right", marginTop: "7px" }}
                         />
                       ) : (
